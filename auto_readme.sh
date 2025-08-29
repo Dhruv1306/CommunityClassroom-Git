@@ -13,7 +13,7 @@ if [[ " ${TARGET_BRANCHES[@]} " =~ " ${CURRENT_BRANCH} " ]]; then
   echo "## 📜 File Timeline" > README.md
   echo "" >> README.md
 
-  for file in $(ls *.txt | sort); do
+  for file in $(git ls-files | grep '\.txt$'); do
     mod_date=$(git log -1 --format="%ad" --date=short -- "$file")
     echo "1. 🕰️ \`$file\` — updated on $mod_date" >> README.md
   done
