@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ✅ Define which branches should trigger the README update
-TARGET_BRANCHES=("master"mod_date=$(git log -1 --format="%ad" --date=short -- "$file") "main" "sideBranch_2" )
+TARGET_BRANCHES=("master" "sideBranch_2")
 
 # Get current branch name
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
